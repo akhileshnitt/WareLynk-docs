@@ -232,38 +232,49 @@
     <h2 class="section-title">See It in Action</h2>
     <p class="section-subtitle">A look at the WareLynk experience on Android</p>
     <div class="screenshots-scroll">
-      <div class="screenshot-frame">
-        <div class="screenshot-placeholder">
-          <span class="screenshot-placeholder-icon">📱</span>
-          <span>Dashboard</span>
+      <figure class="screenshot-frame" data-full="screenshots/signin.png" tabindex="0" role="button" aria-label="View Sign In screenshot">
+        <div class="screenshot-thumb">
+          <img src="screenshots/signin.png" alt="Sign In" class="screenshot-img" loading="lazy" />
+          <div class="screenshot-tap-hint">Tap to view</div>
         </div>
-      </div>
-      <div class="screenshot-frame">
-        <div class="screenshot-placeholder">
-          <span class="screenshot-placeholder-icon">📱</span>
-          <span>Browse Warehouses</span>
+        <figcaption class="screenshot-caption">Sign In</figcaption>
+      </figure>
+      <figure class="screenshot-frame" data-full="screenshots/owner-dashboard.png" tabindex="0" role="button" aria-label="View Owner Dashboard screenshot">
+        <div class="screenshot-thumb">
+          <img src="screenshots/owner-dashboard.png" alt="Owner Dashboard" class="screenshot-img" loading="lazy" />
+          <div class="screenshot-tap-hint">Tap to view</div>
         </div>
-      </div>
-      <div class="screenshot-frame">
-        <div class="screenshot-placeholder">
-          <span class="screenshot-placeholder-icon">📱</span>
-          <span>Warehouse Details</span>
+        <figcaption class="screenshot-caption">Owner Dashboard</figcaption>
+      </figure>
+      <figure class="screenshot-frame" data-full="screenshots/business-dashboard.png" tabindex="0" role="button" aria-label="View Find Warehouses screenshot">
+        <div class="screenshot-thumb">
+          <img src="screenshots/business-dashboard.png" alt="Find Warehouses" class="screenshot-img" loading="lazy" />
+          <div class="screenshot-tap-hint">Tap to view</div>
         </div>
-      </div>
-      <div class="screenshot-frame">
-        <div class="screenshot-placeholder">
-          <span class="screenshot-placeholder-icon">📱</span>
-          <span>Booking Flow</span>
+        <figcaption class="screenshot-caption">Find Warehouses</figcaption>
+      </figure>
+      <figure class="screenshot-frame" data-full="screenshots/warehouse-details.png" tabindex="0" role="button" aria-label="View Warehouse Details screenshot">
+        <div class="screenshot-thumb">
+          <img src="screenshots/warehouse-details.png" alt="Warehouse Details" class="screenshot-img" loading="lazy" />
+          <div class="screenshot-tap-hint">Tap to view</div>
         </div>
-      </div>
-      <div class="screenshot-frame">
-        <div class="screenshot-placeholder">
-          <span class="screenshot-placeholder-icon">📱</span>
-          <span>Payments</span>
+        <figcaption class="screenshot-caption">Warehouse Details</figcaption>
+      </figure>
+      <figure class="screenshot-frame" data-full="screenshots/earnings.png" tabindex="0" role="button" aria-label="View Revenue Analytics screenshot">
+        <div class="screenshot-thumb">
+          <img src="screenshots/earnings.png" alt="Revenue Analytics" class="screenshot-img" loading="lazy" />
+          <div class="screenshot-tap-hint">Tap to view</div>
         </div>
-      </div>
+        <figcaption class="screenshot-caption">Revenue Analytics</figcaption>
+      </figure>
+      <figure class="screenshot-frame" data-full="screenshots/payment-success.png" tabindex="0" role="button" aria-label="View Secure Payments screenshot">
+        <div class="screenshot-thumb">
+          <img src="screenshots/payment-success.png" alt="Secure Payments" class="screenshot-img" loading="lazy" />
+          <div class="screenshot-tap-hint">Tap to view</div>
+        </div>
+        <figcaption class="screenshot-caption">Secure Payments</figcaption>
+      </figure>
     </div>
-    <p class="screenshots-note">Screenshots coming soon</p>
   </section>
 
   <!-- Legal Links -->
@@ -292,6 +303,11 @@
     </div>
   </footer>
 
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Screenshot viewer">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
+    <img class="lightbox-img" id="lightbox-img" src="" alt="" />
+  </div>
+
   <script>
     var t = document.getElementById('nav-toggle');
     var n = document.getElementById('main-nav');
@@ -304,6 +320,39 @@
         n.classList.remove('nav-open');
         t.classList.remove('open');
       });
+    });
+
+    // Screenshot lightbox
+    var lightbox = document.getElementById('lightbox');
+    var lightboxImg = document.getElementById('lightbox-img');
+    var lightboxClose = document.getElementById('lightbox-close');
+
+    document.querySelectorAll('.screenshot-frame').forEach(function(frame) {
+      frame.addEventListener('click', function() {
+        var src = frame.getAttribute('data-full');
+        var alt = frame.querySelector('img').getAttribute('alt');
+        lightboxImg.src = src;
+        lightboxImg.alt = alt;
+        lightbox.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      });
+      frame.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') { frame.click(); e.preventDefault(); }
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      lightboxImg.src = '';
+      document.body.style.overflow = '';
+    }
+
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', function(e) {
+      if (e.target === lightbox) closeLightbox();
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeLightbox();
     });
   </script>
 </body>
