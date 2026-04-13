@@ -5,6 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy — WareLynk</title>
   <meta name="description" content="WareLynk Privacy Policy — learn how we collect, use, and protect your personal data." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="icon.png" />
+  <link rel="apple-touch-icon" href="icon.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://warelynk.com/privacy-policy.html" />
+  <meta property="og:title" content="Privacy Policy — WareLynk" />
+  <meta property="og:description" content="WareLynk Privacy Policy — learn how we collect, use, and protect your personal data." />
+  <meta property="og:image" content="https://warelynk.com/icon.png" />
+  <meta property="og:site_name" content="WareLynk" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -13,14 +29,18 @@
   <header>
     <div class="header-inner">
       <a href="index.html" class="logo">
-        <div class="logo-icon">W</div>
+        <img src="icon.png" alt="WareLynk" class="logo-icon-img" />
         <span class="logo-name">WareLynk</span>
       </a>
-      <nav>
+      <nav id="main-nav">
+        <a href="index.html">Home</a>
         <a href="privacy-policy.html">Privacy Policy</a>
         <a href="terms-of-service.html">Terms</a>
         <a href="data-deletion.html">Data Deletion</a>
       </nav>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
@@ -28,10 +48,6 @@
   <div class="page-hero">
     <p class="breadcrumb"><a href="index.html">WareLynk</a> &rsaquo; Privacy Policy</p>
     <h1>Privacy Policy</h1>
-    <p class="meta">
-      <span>Last Updated: February 19, 2026</span>
-      Effective Date: February 19, 2026
-    </p>
   </div>
 
   <!-- Content -->
@@ -269,7 +285,7 @@
     <h2>10. Changes to This Privacy Policy</h2>
     <p>We may update this Privacy Policy from time to time to reflect changes in our practices or for legal, operational, or regulatory reasons. When we make changes:</p>
     <ul>
-      <li>We will update the "Last Updated" date at the top of this document.</li>
+      <li>We will notify you of the changes via a push notification or in-app announcement.</li>
       <li>For material changes, we will notify you via a push notification or email at least <strong>7 days</strong> before the changes take effect.</li>
       <li>Your continued use of the App after the effective date constitutes your acceptance of the updated policy.</li>
     </ul>
@@ -285,9 +301,6 @@
       <p style="margin-top:10px; font-size:14px; color:#666;">We aim to respond to all privacy-related inquiries within <strong>5 business days</strong>.</p>
     </div>
 
-    <div class="notice-box" style="margin-top:32px;">
-      <p><em>This Privacy Policy was last updated on February 19, 2026.</em></p>
-    </div>
 
   </div>
 
@@ -304,5 +317,13 @@
     </div>
   </footer>
 
+  <script>
+    var t = document.getElementById("nav-toggle");
+    var n = document.getElementById("main-nav");
+    t.addEventListener("click", function() {
+      n.classList.toggle("nav-open");
+      t.classList.toggle("open");
+    });
+  </script>
 </body>
 </html>

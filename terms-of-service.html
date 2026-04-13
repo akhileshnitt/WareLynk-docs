@@ -5,6 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Terms of Service — WareLynk</title>
   <meta name="description" content="WareLynk Terms of Service — the rules and agreement governing your use of the WareLynk platform." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="icon.png" />
+  <link rel="apple-touch-icon" href="icon.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://warelynk.com/terms-of-service.html" />
+  <meta property="og:title" content="Terms of Service — WareLynk" />
+  <meta property="og:description" content="WareLynk Terms of Service — the rules and agreement governing your use of the WareLynk platform." />
+  <meta property="og:image" content="https://warelynk.com/icon.png" />
+  <meta property="og:site_name" content="WareLynk" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -13,14 +29,18 @@
   <header>
     <div class="header-inner">
       <a href="index.html" class="logo">
-        <div class="logo-icon">W</div>
+        <img src="icon.png" alt="WareLynk" class="logo-icon-img" />
         <span class="logo-name">WareLynk</span>
       </a>
-      <nav>
+      <nav id="main-nav">
+        <a href="index.html">Home</a>
         <a href="privacy-policy.html">Privacy Policy</a>
         <a href="terms-of-service.html">Terms</a>
         <a href="data-deletion.html">Data Deletion</a>
       </nav>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
@@ -28,10 +48,6 @@
   <div class="page-hero">
     <p class="breadcrumb"><a href="index.html">WareLynk</a> &rsaquo; Terms of Service</p>
     <h1>Terms of Service</h1>
-    <p class="meta">
-      <span>Last Updated: February 19, 2026</span>
-      Effective Date: February 19, 2026
-    </p>
   </div>
 
   <!-- Content -->
@@ -312,7 +328,7 @@
     <h2>16. Modifications to Terms</h2>
     <p>We reserve the right to modify these Terms at any time. When we make material changes:</p>
     <ul>
-      <li>We will update the "Last Updated" date at the top of this document</li>
+      <li>We will notify you of the changes via a push notification or in-app announcement</li>
       <li>We will notify you via a push notification or email at least <strong>7 days</strong> before the changes take effect</li>
       <li>Continued use of the Platform after the effective date constitutes your acceptance of the modified Terms</li>
     </ul>
@@ -360,9 +376,6 @@
       <p>🌐 Website: <a href="https://warelynk.com">https://warelynk.com</a></p>
     </div>
 
-    <div class="notice-box" style="margin-top:32px;">
-      <p><em>These Terms of Service were last updated on February 19, 2026.</em></p>
-    </div>
 
   </div>
 
@@ -379,5 +392,13 @@
     </div>
   </footer>
 
+  <script>
+    var t = document.getElementById("nav-toggle");
+    var n = document.getElementById("main-nav");
+    t.addEventListener("click", function() {
+      n.classList.toggle("nav-open");
+      t.classList.toggle("open");
+    });
+  </script>
 </body>
 </html>

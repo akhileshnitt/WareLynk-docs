@@ -4,7 +4,29 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WareLynk — Warehouse & Storage Rental</title>
-  <meta name="description" content="WareLynk connects businesses with warehouse and storage space owners across India. Find, book, and manage storage spaces seamlessly." />
+  <meta name="description" content="WareLynk connects businesses with verified warehouse owners across India. Find, book, and manage storage spaces seamlessly." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="icon.png" />
+  <link rel="apple-touch-icon" href="icon.png" />
+
+  <!-- Open Graph (WhatsApp, LinkedIn, Facebook) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://warelynk.com/" />
+  <meta property="og:title" content="WareLynk — Warehouse & Storage Rental Made Simple" />
+  <meta property="og:description" content="WareLynk connects businesses with verified warehouse owners across India. Find, book, and manage storage spaces seamlessly." />
+  <meta property="og:image" content="https://warelynk.com/icon.png" />
+  <meta property="og:site_name" content="WareLynk" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="WareLynk — Warehouse & Storage Rental Made Simple" />
+  <meta name="twitter:description" content="WareLynk connects businesses with verified warehouse owners across India. Find, book, and manage storage spaces seamlessly." />
+  <meta name="twitter:image" content="https://warelynk.com/icon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -13,14 +35,18 @@
   <header>
     <div class="header-inner">
       <a href="index.html" class="logo">
-        <div class="logo-icon">W</div>
+        <img src="icon.png" alt="WareLynk" class="logo-icon-img" />
         <span class="logo-name">WareLynk</span>
       </a>
-      <nav>
-        <a href="privacy-policy.html">Privacy Policy</a>
-        <a href="terms-of-service.html">Terms</a>
-        <a href="data-deletion.html">Data Deletion</a>
+      <nav id="main-nav">
+        <a href="#features">Features</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#screenshots">Screenshots</a>
+        <a href="privacy-policy.html">Privacy</a>
       </nav>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
@@ -35,9 +61,9 @@
   </section>
 
   <!-- Features -->
-  <section class="features">
+  <section class="features" id="features">
     <h2 class="section-title">Everything you need to manage storage</h2>
-    <p class="section-subtitle">A complete platform for both warehouse owners and businesses</p>
+    <p class="section-subtitle">A complete platform for warehouse owners and businesses</p>
     <div class="features-grid">
       <div class="feature-card">
         <div class="feature-icon">🔍</div>
@@ -72,6 +98,174 @@
     </div>
   </section>
 
+  <!-- Who It's For (Roles) -->
+  <section class="roles" id="roles">
+    <h2 class="section-title">Built for every role</h2>
+    <p class="section-subtitle">Whether you own a warehouse, need storage, or both — WareLynk has you covered</p>
+    <div class="roles-grid">
+
+      <div class="role-card">
+        <div class="role-icon-wrap role-owner">🏭</div>
+        <h3>Warehouse Owner</h3>
+        <p class="role-tagline">List your space. Earn effortlessly.</p>
+        <ul class="role-list">
+          <li>List warehouses and storage properties</li>
+          <li>Review and approve booking requests</li>
+          <li>Generate invoices and track payments</li>
+          <li>Monitor earnings with analytics</li>
+          <li>Manage multiple properties in one place</li>
+        </ul>
+      </div>
+
+      <div class="role-card role-card--featured">
+        <div class="role-badge-top">Most Flexible</div>
+        <div class="role-icon-wrap role-dual">⚡</div>
+        <h3>Dual Account</h3>
+        <p class="role-tagline">Own space. Rent space. Switch anytime.</p>
+        <ul class="role-list">
+          <li>Single account for both roles</li>
+          <li>Seamlessly switch between Owner and Business</li>
+          <li>Manage all operations from one dashboard</li>
+          <li>Separate KYC profiles for each role</li>
+          <li>Combined notifications and activity</li>
+        </ul>
+      </div>
+
+      <div class="role-card">
+        <div class="role-icon-wrap role-business">🏢</div>
+        <h3>Business</h3>
+        <p class="role-tagline">Find space. Book fast. Scale freely.</p>
+        <ul class="role-list">
+          <li>Search and filter verified warehouses</li>
+          <li>Send booking requests instantly</li>
+          <li>Manage Purchase Orders and Invoices</li>
+          <li>Pay securely via Razorpay</li>
+          <li>Track all active and past bookings</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="how-it-works" id="how-it-works">
+    <h2 class="section-title">How It Works</h2>
+    <p class="section-subtitle">Get started in minutes — for both owners and businesses</p>
+
+    <div class="hiw-container">
+
+      <div class="hiw-column">
+        <div class="hiw-role-label hiw-label-owner">For Warehouse Owners</div>
+        <div class="hiw-steps">
+          <div class="hiw-step">
+            <div class="hiw-step-num">1</div>
+            <div class="hiw-step-body">
+              <h4>Sign Up & KYC</h4>
+              <p>Create your account and complete KYC verification. Our admin team reviews and approves your profile.</p>
+            </div>
+          </div>
+          <div class="hiw-step">
+            <div class="hiw-step-num">2</div>
+            <div class="hiw-step-body">
+              <h4>List Your Property</h4>
+              <p>Add your warehouse with photos, dimensions, location, amenities, and pricing.</p>
+            </div>
+          </div>
+          <div class="hiw-step">
+            <div class="hiw-step-num">3</div>
+            <div class="hiw-step-body">
+              <h4>Receive Booking Requests</h4>
+              <p>Businesses find and request your space. Review requests and approve or decline with one tap.</p>
+            </div>
+          </div>
+          <div class="hiw-step">
+            <div class="hiw-step-num">4</div>
+            <div class="hiw-step-body">
+              <h4>Invoice & Get Paid</h4>
+              <p>Generate invoices automatically. Receive secure Razorpay payments and track your earnings.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hiw-divider"></div>
+
+      <div class="hiw-column">
+        <div class="hiw-role-label hiw-label-business">For Businesses</div>
+        <div class="hiw-steps">
+          <div class="hiw-step">
+            <div class="hiw-step-num">1</div>
+            <div class="hiw-step-body">
+              <h4>Sign Up & KYC</h4>
+              <p>Register your business and complete KYC verification to unlock access to all verified warehouses.</p>
+            </div>
+          </div>
+          <div class="hiw-step">
+            <div class="hiw-step-num">2</div>
+            <div class="hiw-step-body">
+              <h4>Search & Discover</h4>
+              <p>Browse warehouses by city, size, price, and amenities. View photos, location, and availability.</p>
+            </div>
+          </div>
+          <div class="hiw-step">
+            <div class="hiw-step-num">3</div>
+            <div class="hiw-step-body">
+              <h4>Book & Raise a PO</h4>
+              <p>Send a booking request and raise a Purchase Order. Get confirmed once the owner approves.</p>
+            </div>
+          </div>
+          <div class="hiw-step">
+            <div class="hiw-step-num">4</div>
+            <div class="hiw-step-body">
+              <h4>Pay Securely</h4>
+              <p>Pay via UPI, card, or net banking through Razorpay. Receive your invoice instantly after payment.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- App Screenshots -->
+  <section class="screenshots" id="screenshots">
+    <h2 class="section-title">See It in Action</h2>
+    <p class="section-subtitle">A look at the WareLynk experience on Android</p>
+    <div class="screenshots-scroll">
+      <div class="screenshot-frame">
+        <div class="screenshot-placeholder">
+          <span class="screenshot-placeholder-icon">📱</span>
+          <span>Dashboard</span>
+        </div>
+      </div>
+      <div class="screenshot-frame">
+        <div class="screenshot-placeholder">
+          <span class="screenshot-placeholder-icon">📱</span>
+          <span>Browse Warehouses</span>
+        </div>
+      </div>
+      <div class="screenshot-frame">
+        <div class="screenshot-placeholder">
+          <span class="screenshot-placeholder-icon">📱</span>
+          <span>Warehouse Details</span>
+        </div>
+      </div>
+      <div class="screenshot-frame">
+        <div class="screenshot-placeholder">
+          <span class="screenshot-placeholder-icon">📱</span>
+          <span>Booking Flow</span>
+        </div>
+      </div>
+      <div class="screenshot-frame">
+        <div class="screenshot-placeholder">
+          <span class="screenshot-placeholder-icon">📱</span>
+          <span>Payments</span>
+        </div>
+      </div>
+    </div>
+    <p class="screenshots-note">Screenshots coming soon</p>
+  </section>
+
   <!-- Legal Links -->
   <section class="legal-links">
     <div class="legal-links-inner">
@@ -98,5 +292,19 @@
     </div>
   </footer>
 
+  <script>
+    var t = document.getElementById('nav-toggle');
+    var n = document.getElementById('main-nav');
+    t.addEventListener('click', function() {
+      n.classList.toggle('nav-open');
+      t.classList.toggle('open');
+    });
+    n.querySelectorAll('a').forEach(function(a) {
+      a.addEventListener('click', function() {
+        n.classList.remove('nav-open');
+        t.classList.remove('open');
+      });
+    });
+  </script>
 </body>
 </html>
