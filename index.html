@@ -12,17 +12,18 @@
 
   <!-- Open Graph (WhatsApp, LinkedIn, Facebook) -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://warelynk.com/" />
+  <meta property="og:url" content="https://www.warelynk.com/legal/" />
   <meta property="og:title" content="WareLynk — Warehouse & Storage Rental Made Simple" />
   <meta property="og:description" content="WareLynk connects businesses with verified warehouse owners across India. Find, book, and manage storage spaces seamlessly." />
-  <meta property="og:image" content="https://warelynk.com/icon.png" />
+  <meta property="og:image" content="https://www.warelynk.com/legal/icon.png" />
   <meta property="og:site_name" content="WareLynk" />
+  <link rel="canonical" href="https://www.warelynk.com/legal/" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="WareLynk — Warehouse & Storage Rental Made Simple" />
   <meta name="twitter:description" content="WareLynk connects businesses with verified warehouse owners across India. Find, book, and manage storage spaces seamlessly." />
-  <meta name="twitter:image" content="https://warelynk.com/icon.png" />
+  <meta name="twitter:image" content="https://www.warelynk.com/legal/icon.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -55,7 +56,7 @@
     <div class="hero-badge">Now Available on Android</div>
     <h1>Warehouse & Storage Rental<br><span>Made Simple</span></h1>
     <p>WareLynk connects businesses with verified warehouse owners across India — book storage spaces with ease.</p>
-    <a href="https://play.google.com/store/apps/details?id=com.warelynk.app" class="app-badge">
+    <a href="#" id="playstore-cta" class="app-badge" aria-label="Get it on Google Play (coming soon)">
       ▶&nbsp; Get it on Google Play
     </a>
   </section>
@@ -315,6 +316,16 @@
     <img class="lightbox-img" id="lightbox-img" src="" alt="" />
   </div>
 
+  <div class="coming-soon-modal" id="coming-soon-modal" role="dialog" aria-modal="true" aria-labelledby="coming-soon-title">
+    <div class="coming-soon-card">
+      <button class="coming-soon-close" id="coming-soon-close" aria-label="Close coming soon dialog">&times;</button>
+      <div class="coming-soon-icon">🚀</div>
+      <h3 id="coming-soon-title">App Coming Soon</h3>
+      <p>WareLynk will be available on Google Play soon. We are preparing the launch.</p>
+      <button class="coming-soon-btn" id="coming-soon-ok">Got it</button>
+    </div>
+  </div>
+
   <script>
     var t = document.getElementById('nav-toggle');
     var n = document.getElementById('main-nav');
@@ -358,9 +369,50 @@
     lightbox.addEventListener('click', function(e) {
       if (e.target === lightbox) closeLightbox();
     });
+    // Coming soon modal
+    var comingSoonModal = document.getElementById('coming-soon-modal');
+    var comingSoonClose = document.getElementById('coming-soon-close');
+    var comingSoonOk = document.getElementById('coming-soon-ok');
+
+    function openComingSoonModal() {
+      if (!comingSoonModal) return;
+      comingSoonModal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeComingSoonModal() {
+      if (!comingSoonModal) return;
+      comingSoonModal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    if (comingSoonClose) {
+      comingSoonClose.addEventListener('click', closeComingSoonModal);
+    }
+    if (comingSoonOk) {
+      comingSoonOk.addEventListener('click', closeComingSoonModal);
+    }
+    if (comingSoonModal) {
+      comingSoonModal.addEventListener('click', function(e) {
+        if (e.target === comingSoonModal) closeComingSoonModal();
+      });
+    }
+
     document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'Escape') {
+        closeLightbox();
+        closeComingSoonModal();
+      }
     });
+
+    // Play Store CTA (until app listing is live)
+    var playstoreCta = document.getElementById('playstore-cta');
+    if (playstoreCta) {
+      playstoreCta.addEventListener('click', function(e) {
+        e.preventDefault();
+        openComingSoonModal();
+      });
+    }
   </script>
 </body>
 </html>

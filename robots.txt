@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /legal/
+
+Sitemap: https://www.warelynk.com/legal/sitemap.xml

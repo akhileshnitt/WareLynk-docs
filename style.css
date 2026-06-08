@@ -921,6 +921,92 @@ footer {
   background: var(--orange);
 }
 
+/* Coming Soon Modal */
+.coming-soon-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.78);
+  z-index: 10001;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.coming-soon-modal.open {
+  display: flex;
+}
+
+.coming-soon-card {
+  width: min(440px, 100%);
+  background: var(--surface);
+  border: 1px solid var(--border-light);
+  border-radius: 18px;
+  padding: 28px 24px 22px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 20px 56px rgba(0, 0, 0, 0.45);
+}
+
+.coming-soon-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.1);
+  color: var(--text);
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.coming-soon-close:hover {
+  background: var(--orange);
+}
+
+.coming-soon-icon {
+  font-size: 34px;
+  margin-bottom: 10px;
+}
+
+.coming-soon-card h3 {
+  font-size: 24px;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  color: var(--text);
+}
+
+.coming-soon-card p {
+  color: var(--text-secondary);
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0 auto 20px;
+  max-width: 320px;
+}
+
+.coming-soon-btn {
+  border: none;
+  background: var(--orange);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 10px 22px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.coming-soon-btn:hover {
+  background: var(--orange-dark);
+  transform: translateY(-1px);
+}
+
 /* ─── Responsive ──────────────────────────────────────── */
 
 /* ── Large screens: tighten section padding slightly ── */
@@ -1038,6 +1124,15 @@ footer {
 
   .role-card { padding: 24px 20px; }
   .hiw-step-num { width: 28px; height: 28px; font-size: 13px; }
+
+  .coming-soon-card {
+    border-radius: 14px;
+    padding: 24px 18px 20px;
+  }
+
+  .coming-soon-card h3 {
+    font-size: 22px;
+  }
 }
 
 /* ── Very small phones (380px) ───────────────────────── */
